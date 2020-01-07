@@ -6,27 +6,33 @@
 
 
 
-const emptyObj = {};
+const emptyObj = {"name": "heyhey"};
 const entry = 4;
 
-// function isObjEmptyProperty(emptyObj) {
-//     for(var key in emptyObj) {
-//         if (emptyObj.hasOwnProperty(key)) {
-//             console.log("has key, not empty", JSON.stringify(emptyObj))
-//             return true;
-//         }
-//     }
-//         console.log("no key, empty: ", JSON.stringify(emptyObj))
-//         return false;
-// }
+function isObjEmptyProperty(object) {
+    console.time("emptyObj.hasOwnProperty");
+    for(var key in emptyObj) {
+        if (emptyObj.hasOwnProperty(key)) {
+            console.log("has key, not empty", JSON.stringify(emptyObj))
+            console.timeEnd("emptyObj.hasOwnProperty");
+            return true;
+        }
+    }
+        console.log("no key, empty: ", JSON.stringify(emptyObj))
+        console.timeEnd("emptyObj.hasOwnProperty");
+        return false;
+}
 
-// function isObjEmptyEntries(object) {
-//     if (Object.entries(object).length === 0) {
+// function isObjEmptyEntries(emptyObj) {
+//     console.time("isObjEmptyEntries Object.entries");
+//     if (Object.entries(emptyObj).length == 0) {
 //         console.log("true");
+//         console.timeEnd("Object.entries");
 //         return true; 
 //     }
 //     else { 
 //         console.log("false")
+//         console.timeEnd("Object.entries");
 //         return false;
 //         }
 // }
@@ -35,7 +41,6 @@ const entry = 4;
 
 const isObjEmpty = (object) => {
     console.time("Object.keys");
-
     if ( 
         Object.keys(emptyObj) == 0
     ) {
@@ -50,20 +55,20 @@ const isObjEmpty = (object) => {
     }
 }
 
-// const isObjEmptyStringify = (object) => {
-//     console.time("stringify")
-//     if (
-//         JSON.stringify(emptyObj) == 0
-//     ) {
-//         console.log("empty")
-//         console.timeEnd("stringify");
-//         return true;
-//     }
-//     else {
-//         console.log("not empty")
-//         console.timeEnd("stringify");
-//         return false;
-//     }
+const isObjEmptyStringify = (object) => {
+    console.time("stringify")
+    if (
+        JSON.stringify(emptyObj) == 0
+    ) {
+        console.log("empty")
+        console.timeEnd("stringify");
+        return true;
+    }
+    else {
+        console.log("not empty")
+        console.timeEnd("stringify");
+        return false;
+    }
 
-// }
+}
 

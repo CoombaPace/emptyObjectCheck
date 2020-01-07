@@ -16,13 +16,21 @@
           <hr class="my-2">
           <p>JSON.stringify seems faster but also feels inadequate or inelegant. Object.keys seems a more solid solution.</p>
           <p class="lead">
+            <a class="btn btn-primary btn-lg" 
+                 role="button"
+                 onclick="isObjEmptyProperty()"> emptyObj.hasOwnProperty
+              </a>
+              <!-- <a class="btn btn-primary btn-lg" 
+                 role="button"
+                 onclick="isObjEmptyEntries()"> Object.entries.length
+              </a> -->
               <a class="btn btn-primary btn-lg" 
                  role="button"
                  onclick="isObjEmpty()"> Object.keys
               </a>
               <a class="btn btn-warning btn-lg" 
                  role="button"
-                 onclick="isObjEmptyProperty()"> Properties
+                 onclick="isObjEmptyStringify()"> JSON.stringify
               </a>
           </p>
       </div>
